@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='EVENT_PACKAGE',
-    version='0.1.8',
+    version='0.1.9',
     packages=setuptools.find_packages(),
     install_requires=['matplotlib', 'numpy', 'pandas'],
     discription='''This is a hydrologic based event analysis package it also gives the following:

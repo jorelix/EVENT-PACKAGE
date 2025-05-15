@@ -17,15 +17,21 @@ b. You have the hourly event data that can be called when the discharge data is 
 
 ## DATA TYPES
 
-This code would require that you input 2 datas
+This code would require that you input at least Three (3) data sets
 
 ## DATA A - Discharge data
-The discharge data should be saved in a txt file in a single column (i.e you can copy and paste the data column from excel)
+
+The Date in the first column of the CSV file
 
 
 ## DATA B - DATES
 
-The dates should also be put in a txt file like in the same manner as the discharge data. (single column of dates)
+The discharge data should be saved in a in the second column of the CSV file
+
+
+## DATA C - DATES
+
+The concentration on the third column of the CSV file. if you do not have the concentration, fill up the column with '1's.
 
 ## Hourly Date Format
 

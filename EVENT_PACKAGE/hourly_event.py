@@ -5,6 +5,7 @@ import csv
 
 def hourly_events(data_file):
     
+    ID = 'Res-H_'
     df = pd.read_csv(data_file)
     print('\n')
     print('This is the first 50 lines')
@@ -176,18 +177,21 @@ press Y for Yes
     seasons = 0
     all_varient = []
     while seasons < 4:
-        event_point = float(input('What is the value of the event start point: '))
-        seasons += 1
+        seasons += 1        
         if seasons == 1:
+            event_point = float(input('What is the minimum threshold for Event in Winter: '))
             winter = event_point
             all_varient.append(float(event_point))
         elif seasons == 2:
+            event_point = float(input('What is the minimum threshold for Event in Spring: '))
             spring = event_point
             all_varient.append(float(event_point))
         elif seasons == 3:
+            event_point = float(input('What is the minimum threshold for Event in Summer: '))
             summer = event_point
             all_varient.append(float(event_point))
         elif seasons == 4:
+            event_point = float(input('What is the minimum threshold for Event in Fall: '))
             fall = event_point
             all_varient.append(float(event_point))
     
@@ -267,6 +271,11 @@ Please select the method you want to use by typing A or B: ''').upper()
                     event_point = fall                    
                     print('Analysis starting in fall')
     print('\n')
+    ID += f'Sea-{season_delineation}_'
+    ID += f'Win-{winter}_'
+    ID += f'Spr-{spring}_'
+    ID += f'Sum-{summer}_'
+    ID += f'Fal-{fall}'
     if Discharge[0] > event_point:
         event_occuring = True
         ## this part supplies the whole data for the analysis
@@ -807,6 +816,8 @@ Please select the method you want to use by typing A or B: ''').upper()
         print('\n')
         print('These are the average water temperatures for the events')
         print(average_water_table_temp)
+    print('\n\n')
+    print(f'Your Analysis Configuration ID is: {ID}')
 #################################################################################################################################    
 #################################################################################################################################################################################################################################
 print('''Ensure you data is in the order
@@ -823,4 +834,5 @@ Example: data_file.csv
 
 
 hourly_events(data_file)
+
 

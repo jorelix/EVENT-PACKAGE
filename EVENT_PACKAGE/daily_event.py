@@ -5,6 +5,7 @@ import csv
 
 def daily_events(data_file):
     
+    ID = 'Res-D_'
     df = pd.read_csv(data_file)
     print('\n')
     print('This is the first 50 lines')
@@ -270,7 +271,11 @@ Please select the method you want to use by typing A or B: ''').upper()
                     event_point = fall                    
                     print('Analysis starting in fall')
     print('\n')
-    
+    ID += f'Sea-{season_delineation}_'
+    ID += f'Win-{winter}_'
+    ID += f'Spr-{spring}_'
+    ID += f'Sum-{summer}_'
+    ID += f'Fal-{fall}'
     if Discharge[0] > event_point:
         event_occuring = True
         ## this part supplies the whole data for the analysis
@@ -819,7 +824,8 @@ Please select the method you want to use by typing A or B: ''').upper()
         print('These are the average water temperatures for the events')
         print(average_water_table_temp)
 #         print(len(average_water_table_temp))
-    
+    print('\n\n')
+    print(f'Your Analysis Configuration ID is: {ID}')
 #     print(full_hit)
 #     print('\n')
 #     print('These are your base flow')
@@ -840,4 +846,5 @@ Example: data_file.csv
 print('\n')
 
 daily_events(data_file)
+
 
